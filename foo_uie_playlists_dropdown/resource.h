@@ -1,0 +1,42 @@
+#ifndef IDC_STATIC
+#define IDC_STATIC (-1)
+#endif
+
+#define IDD_PREFERENCES                         120
+#define IDD_PREFERENCES_DISPLAY                 121
+#define IDD_PREFERENCES_GENERAL                 122
+#define IDD_RENAME                              123
+#define IDD_SORT                                124
+#define IDC_FS_TAB                              1000
+#define IDC_VERSION                             1000
+#define IDC_MBUTTON_REORDER                     1001
+#define IDC_SORT_STRING                         1001
+#define IDC_FIELDS                              1002
+#define IDC_MW_DELAY                            1002
+#define IDC_TAB1                                1002
+#define IDC_MW_DELAY_SPIN                       1003
+#define IDC_PLAYLIST_NAME                       1003
+#define IDC_PREVIEW                             1003
+#define IDC_APPLY                               1005
+#define IDC_MW_USE                              1005
+#define IDC_MCLICK                              1006
+#define IDC_MIN_VISIBLE                         1006
+#define IDC_MIN_VISIBLE_SPIN                    1007
+#define IDC_DD_AUTOEXPAND                       1010
+#define IDC_PADDING_TOP                         1010
+#define IDC_DD_ACTIVATE                         1011
+#define IDC_PADDING_RIGHT                       1011
+#define IDC_DD_AUTOSWITCH                       1012
+#define IDC_FORMATTING_STRING                   40003
+#define IDC_SHOW_ICONS                          40005
+#define IDC_PADDING_BOTTOM                      40009
+#define IDC_PADDING_LEFT                        40010
+#define IDC_PADDING_TOP_SPIN                    40015
+#define IDC_PADDING_LEFT_SPIN                   40019
+#define IDC_PADDING_RIGHT_SPIN                  40020
+#define IDC_PADDING_BOTTOM_SPIN                 40021
+#define IDC_DD_AUTOEXPAND_DELAY                 40023
+#define IDC_DD_AUTOSWITCH_DELAY                 40024
+#define IDC_DD_AUTOEXPAND_DELAY_SPIN            40025
+#define IDC_DD_AUTOSWITCH_DELAY_SPIN            40027
+#define IDC_ICON_UTILS                          40027

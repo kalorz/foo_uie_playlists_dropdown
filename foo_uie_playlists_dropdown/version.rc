@@ -1,0 +1,33 @@
+#include "version.h"
+#include <WinVer.h>
+
+//
+// Version Information resources
+//
+VS_VERSION_INFO VERSIONINFO
+    FILEVERSION			FILE_VERSION
+    PRODUCTVERSION		FILE_VERSION
+	FILEFLAGSMASK		VS_FFI_FILEFLAGSMASK
+	FILEFLAGS			FILE_FLAGS
+    FILEOS				VOS__WINDOWS32
+    FILETYPE			VFT_DLL
+{
+    BLOCK "StringFileInfo"
+    {
+        BLOCK "080904b0"
+        {
+			VALUE "CompanyName",		FILE_COMPANY
+            VALUE "FileDescription",	FILE_NAME
+            VALUE "FileVersion",		FILE_VERSION_STR
+            VALUE "InternalName",		FILE_NAME
+            VALUE "LegalCopyright",		FILE_COPYRIGHT
+            VALUE "OriginalFilename",	FILE_NAME ".dll"
+            VALUE "ProductName",		FILE_NAME
+            VALUE "ProductVersion",		FILE_VERSION_STR
+        }
+    }
+    BLOCK "VarFileInfo"
+    {
+        VALUE "Translation", 2057, 1200
+    }
+}

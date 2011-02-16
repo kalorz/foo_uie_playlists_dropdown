@@ -1,0 +1,115 @@
+0.7.6
+[*]Code rewrite/clean-up/optimization (performance significantly improved on large number of playlists)
+[*]Changed color handling to be compatible with core functions like [i]$blend()[/i] or [i]$transition()[/i]
+[*]Replaced color fields ([i]%_text%[/i] etc.) with function [i]$color()[/i] taking appropriate parameters ([i]$color(text)[/i] etc.)
+[*]Removed [i]$offset_colour()[/i] function (using core [i]$blend()[/i] now)
+[*][i]$calculate_blend_offset()[/i] function renamed to [i]$blend_offset()[/i]
+[*]Replaced [i]%incontrol%[/i] field with opposite [i]%_list%[/i] field
+[*]Changed default title/style formatting strings
+
+Please note that due to internal changes, title/style formatting strings will be reset after update to 0.7.6.
+
+0.7.5.2
+[*]More convenient icon chooser
+[*]Fixed XP/Classic Theme glitches
+[*]Added options to reset default icons / clear custom icons history
+
+0.7.5.1
+[*]Improved performance
+
+0.7.5
+[*]Added customizable icons for different playlists
+
+0.7.4
+[*]Rearranged context-menu
+[*]Improved context-menu "Paste" item behavior (playlists/files distinction)
+[*]Fixed several Drag & Drop issues
+[*]Added [b]Play[/b] context-menu action
+
+0.7.3
+[*]Added options for sorting playlists
+
+0.7.2
+[*]Fixed even more bugs and memory leaks
+[*]Added [i]Minimum number of visible items[/i] option
+
+0.7.1.1
+[*]A few fixes for bugs introduced in 0.7.1
+
+0.7.1
+[*]Several bugs fixed (?)
+[*]Added [i]%length_hours%[/i] and [i]%length_seconds%[/i] fields
+[*]Recompiled with newer Columns UI SDK
+
+0.7
+[*]Requires [i]foobar2000 [b]0.9.6[/b][/i] and [i]Columns UI [b]0.3.5.5[/b][/i]
+[*][b]Drag & Drop[/b] funcionality with auto-expand dropdown list while dropping files and auto-naming auto-created playlists
+[*]Now using standard Columns UI Colours and Fonts configuration ([i]Preferences -> Display -> Columns UI -> [b]Colours and Fonts[/b][/i])
+[*]PNG, GIF, JPG, BMP icons support
+[*]New icons (taken from Fugue Icons set: [url=http://www.pinvoke.com/]www.pinvoke.com[/url])
+[*]Added [i]$offset_colour()[/i] and [i]$calculate_blend_target()[/i] functions (similar to [i]Playlist view[/i] functions)
+[*]Context menu for dropped list items:
+Includes editing autoplaylists queries, operations on playlist items, cut/copy/paste, restore (playlists history) etc.
+[*]Removed live-sorting feature (to-do: "Sort by..." context-command)
+[*]Changed default title/style strings
+[*][i]%filesize_natural%[/i] now returns [b]formatted total playlist file size[/b], e.g. [i]62.1GB[/i] or [i]322KB[/i] (use [i]%filesize%[/i] to retrieve file size in old-style bytes)
+[*]Changed [i]%index%[/i] and [i]%total%[/i] to more 'standard' [i]%list_index%[/i] and [i]%list_total%[/i]
+[*]Changed versioning scheme to match other components and extensions
+[*]No more lag on track start/change
+
+0.6 alpha 5
+[*]Added [b]Drag & Drop[/b] funcionality:
+[list][*]Auto expand dropdown list when dropping files (with custom delay)
+[*]Custom formatting string for auto-generated playlist names
+[*]...and more[/list]
+[*]Added [i]$offset_colour()[/i] and [i]$calculate_blend_target()[/i] functions (similar to [i]Playlist view[/i] functions)
+[*]Added [b]Color Mode[/b] selection ([i]System mode[/i] colors change automatically when e.g. Windows theme is changed)
+[*]Several (performance/code) optimizations here and there
+
+0.6 alpha 4
+[*]Handy playlists reordering by dragging them with middle-mouse-button pressed (while listbox is open)
+[*]Reorganized context menu: separate menu for playlist items (RMB click inside ComboBox) and separate for default Columns UI actions ("Show caption / Lock panel ... / Preferences") - RMB click on "drop down" button or border of ComboBox
+[*]2 new Context Menu actions: Move Up / Move Down
+[*]Fixed bug in [i]%_text%[/i], [i]%_selected_text%[/i], [i]%_back%[/i] and [i]%_selected_back%[/i] fields - now they can be used inside [i]$set_style()[/i] functions
+[*]Custom sorting working again
+
+0.6 alpha 3
+[*]Recompiled with newer SDK (Vista compatibility)
+[*]Added [i]%incontrol%[/i] field, so now it is possible to e.g. show total number of playlists only in the control, not the list
+
+0.6 alpha 2
+[*]Added custom icons
+[*]Fixed: some issues with Windows2000 
+
+0.6 alpha 1
+[*]Added [i]$set_style(back,<clr1>,<clr2>)[/i] and [i]$set_style(text,<clr1>,<clr2>)[/i]
+[*]Added some more built-in icons (they're here rather for some example for 'custom icons' than for normal usage)
+[*]Reorganized Preferences Page
+[*]Fixed: empty-lines on toggling icons
+[*]Improved performance (esp. on startup)
+
+20060528 (v0.5.7)
+[*]Added [i]Load...[/i], [i]Save as...[/i] and [i]Save all as...[/i] to context-menu.
+[*]Added middle-click action: [i]Activate now playing playlist[/i]
+[*]Added simple separator lines
+[*]Removed [i]Set max height[/i] option
+[*]Fixed bad filesize on CUEs
+
+20060521 (v0.5.6)
+[*]Fixed mouse-wheel support
+[*]Added [i]%filesize%[/i] field
+[*]Improved preferences page
+[*]Configurable action for [i]Middle click[/i]
+[*](Hopefully) got rid of 'metadb_handle leaks' that occasionally occured (was that really me?...)
+
+20060519 (v0.5.5)
+[*]Added custom-sorting
+[*]Added customizable colors
+[*]Added top/right/bottom/left padding
+[*]Added [i]Rename[/i] and [i]Preferences...[/i] context-menu items
+[*]Added [i]%length%[/i] field
+[*]Keyboard commands: F2 (Rename), DEL (Remove)
+[*]Various bug-fixes
+
+20060517 (v0.5)
+[*]Initial release

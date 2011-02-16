@@ -1,0 +1,100 @@
+TO-FIX:
+[*]Aktywizowanie odpowiedniej playlisty przy wybraniu jej kó³kiem myszy i zamkniêciu listy
+
+===============================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
+TO-DO:
+[*]Otwieranie dropdowna przy drag&drop. Opcja: Ostatnia pozycja na liœcie (nazywaj¹ca siê np. '...') == utworzenie nowej playlisty.
+
+===============================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
+
+DOUBLE DRAW PROBLEM:
+
+[13:09:57] MSG: 32	0x0020 (?)	WM_SETCURSOR
+[13:09:57] MSG: 528	0x0210 (?)	WM_PARENTNOTIFY
+[13:09:57] MSG: 20	0x0014		WM_ERASEBKGND
+[13:09:57] MSG: 792	0x0318		WM_PRINTCLIENT
+[13:09:57] MSG: 312	0x0138		WM_CTLCOLORSTATIC
+[13:09:57] MSG: 307	0x0133		WM_CTLCOLOREDIT
+[13:09:57] MSG: 307	0x0133		WM_CTLCOLOREDIT
+[13:09:57] MSG: 43	0x002b		WM_DRAWITEM
+[13:09:57] DRAW!
+[13:09:57] MSG: 20	0x0014		WM_ERASEBKGND
+[13:09:57] MSG: 792	0x0318		WM_PRINTCLIENT
+[13:09:57] MSG: 312	0x0138		WM_CTLCOLORSTATIC
+[13:09:57] MSG: 307	0x0133		WM_CTLCOLOREDIT
+[13:09:57] MSG: 307	0x0133		WM_CTLCOLOREDIT
+[13:09:57] MSG: 43	0x002b		WM_DRAWITEM
+[13:09:57] DRAW!
+
+===============================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
+
+B£¥D??!!
+1. Jest np. 5 playlist.
+2. Aktywizujê ostatni¹ (lub przedostatni¹, lub któr¹kolwiek playlistê) - np. ACTIVE = 3;
+3. Rozwijam listê.
+4. Poprzez menu kontekstowe usuwam tyle playlist, by nowe PLALISTS_COUNT < ACTIVE.
+5. Czemu dostajê WM_DRAWITEM na playliœcie aktywnej w punkcie 2gim?
+Co dziwne, problem ten nie wystêpuje, gdy np. przed rozwiniêciem listy
+zaktywizujê listê ACTIVE = 0, a dopiero po rozwiniêciu listy, przy pomocy menu
+kontekstwoego, zaktywizujê np. ostatni¹ playlistê.
+Ma to jakiœ zwi¹zek CBN_SELENDCANCEL.
+
+===============================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
+
+// TODO: Blad: D&D z RMB przeciagam na kontrolke, czekam az sie rozwinie, czekam az z listy
+// auto-wybierze sie INNA playlista niz jest teraz, wracam na kontrolke i puszczam RMB.
+// Kontrolka sama wraca do playlisty, ktora byla na poczatku. (?)
+// ALBO LATWIEJ: Wlaczam obsluge Mouse Wheel, rozwijam okienko, scrolluje myszka, aktywuje
+// sie jakas playlista, zamykam comboboxa -> powrot do poprzedniej playlisty. (?)
+
+Normalny wybór:
+9 -> 8 -> 1 (CBN_SELENDOK -> CBN_CLOSEUP -> CBN_SELCHANGE)
+Zamkniêcie bez wyboru:
+10 -> 8     (CBN_SELENDCANCEL -> CBN_CLOSEUP)
+WM_LBUTTONDOWN [11:32:13] MSG: 513 0x0201
+[11:32:13] COMMAND: 10 (SRC: 0 / 787906) 787906 / 787792
+[11:32:13] MSG: 431 0x01af
+WM_CAPTURECHANGED [11:32:13] MSG: 533 0x0215
+[11:32:13] MSG: 24
+[11:32:13] MSG: 70
+[11:32:13] MSG: 71
+[11:32:13] MSG: 392
+[11:32:13] MSG: 394
+[11:32:13] MSG: 393
+[11:32:13] MSG: 409
+[11:32:13] MSG: 392
+[11:32:13] MSG: 394
+[11:32:13] MSG: 393
+[11:32:13] MSG: 409
+[11:32:13] COMMAND: 8 (SRC: 0 / 787906) 787906 / 787792
+[11:32:13] MSG: 390
+[11:32:13] MSG: 407
+[11:32:13] MSG: 392
+[11:32:13] MSG: 394
+[11:32:13] MSG: 393
+[11:32:13] MSG: 409
+[11:32:13] MSG: 675
+[11:32:13] MSG: 133
+
+===============================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
+22:47	mixcherry	Hi musicmusik. I have a question: my friend was using ColumnsUI + my plugin (playlists dropdown) - the old version I developed over 1 year ago using 6.1 API. Now I gave him new version for testing (developed using 6.3 API). He says that once he "installed" new version, my component "disappeared" from his config and he had to put it there once again. Do you by any chance know why it could happened? I haven't changed my extension's guid (maybe
+		mixcherry	caption, name etc., but not guid). I haven't observed such situation on my testing machine.
+22:48	musicmusik	maybe he is using panels ui or panel stack splitter or something. i know at least the former identifies stuff by name and not GUID.
+22:51	mixcherry	Oh... yes, that's probably thta
+23:58	mixcherry	I need some help. I'm doing D&D for my toolbar. I want the combobox to expand after say 500ms when someone is dragging files over it. I implemented IDropTarget, I know how to use timers. I don't know if I'm doing things right: in my DropTarget::DragEnter I'm sending my custom message MSG_DRAG_ENTER (which is WM_APP+1) to my subclassed combobox window. Then, in its window procedure, on MSG_DRAG_ENTER message I am setting up my timer which after
+		mixcherry	certain ms will expand my combobox.
+23:59	mixcherry	Is this the proper way to cooperate between IDropTarget implementation and my window, at which I'm dropping files?
+00:24	musicmusik	sounds OK to me. you should be able to call SetTimer without the intermediate message though. also if you have your own parent window to the combo box i would set the timer/custom messages up on that. in my equiv code i am setting the timer in DragOver, i don't remember if there is a reason for that, probably not. (and of course destroy any pending timers in DragLeave and wherever necessary)
+00:32	mixcherry	Thank you. I'm asking, because I'm getting some strange behavior, like cursor staing in 'Up'n'Down'-arrow-shape after drop.
+00:35	musicmusik	when would the up-down arrow appear normally?
+00:39	mixcherry	well... never
+00:42	mixcherry	another problem is that when the dropdown auto-expands, and then I auto-select position from listbox (still dragging files over it -> another timer with auto-switch), and then drop files to certain selected position on listbox. Till now everything is ok. But when the listbox (and combobox) lose focus, it returns to its pre-drag-n-drop selected item. I have no idea why it does so :/
+00:45	musicmusik	hmm.. strange then  not sure why, difficult to say (without seeing it or code or something). are you setting the drop effect in your DragEnter and DragOver handlers? (i.e. *pdwEffect)?
+		mixcherry	I'm setting it to DROPEFFECT_COPY
+00:46	musicmusik	as long as it is set in both that should be fine.
+		musicmusik	for the second thing, are you setting the selection directly on the list box?
+		mixcherry	normally, no, I'm just using ComboBox_SetCurSel...
+00:47	mixcherry	but I tried selecting it directly on listbox, but it didn't help
+00:50	musicmusik	i have to give up here and go to sleep.. sorry  only thing i can suggest is setting the selection again after dropping then item (you can also try manually closing the dropdown first and possibly some use of postmessage).
+		mixcherry	thanks
+===============================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
