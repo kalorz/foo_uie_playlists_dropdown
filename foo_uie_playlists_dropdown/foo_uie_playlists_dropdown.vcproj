@@ -352,7 +352,7 @@
 			>
 		</File>
 		<File
-			RelativePath="..\README"
+			RelativePath="..\README.mkd"
 			>
 		</File>
 	</Files>
