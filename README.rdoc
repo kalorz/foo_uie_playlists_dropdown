@@ -1,6 +1,6 @@
 = foo_uie_playlists_dropdown
 
-A component for {foobar2000}[link:http://www.foobar2000.org/] audio player.
+A component for {foobar2000}http://www.foobar2000.org/ audio player.
 
 This component displays playlists in a dropdown list. Titles of the playlists are configurable and various informations about playlist are available (through formatting string).
 
