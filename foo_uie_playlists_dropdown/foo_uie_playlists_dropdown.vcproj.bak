@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="9,00"
 	Name="foo_uie_playlists_dropdown"
-	ProjectGUID="{22440CFD-5AA6-4753-A70F-EE0BD76A7AC6}"
+	ProjectGUID="{D7D88FCF-EE81-4A5F-AEAF-B2D77C046E14}"
 	RootNamespace="foo_uie_playlists_dropdown"
 	Keyword="Win32Proj"
 	TargetFrameworkVersion="196613"
@@ -44,7 +44,8 @@
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;FOO_UIE_PLAYLISTS_DROPDOWN_EXPORTS"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
-				RuntimeLibrary="3"
+				RuntimeLibrary="1"
+				EnableFunctionLevelLinking="false"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
 				DebugInformationFormat="4"
@@ -60,11 +61,15 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="shlwapi.lib shared.lib comctl32.lib UxTheme.lib gdiplus.lib"
+				AdditionalDependencies="shlwapi.lib ../../shared/shared.lib comctl32.lib UxTheme.lib gdiplus.lib"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories="..\..\shared"
+				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
-				SubSystem="2"
+				SubSystem="0"
+				OptimizeReferences="2"
+				EnableCOMDATFolding="2"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -87,6 +92,8 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
+				Description="Copying component to foobar2000 components directory..."
+				CommandLine="Copy &quot;$(TargetPath)&quot; &quot;G:\vbox\foobar2000\components&quot; /D /Y"
 			/>
 		</Configuration>
 		<Configuration
@@ -94,6 +101,7 @@
 			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="2"
+			UseOfATL="0"
 			CharacterSet="1"
 			WholeProgramOptimization="1"
 			>
@@ -102,6 +110,7 @@
 			/>
 			<Tool
 				Name="VCCustomBuildTool"
+				CommandLine=""
 			/>
 			<Tool
 				Name="VCXMLDataGeneratorTool"
@@ -114,14 +123,16 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				Optimization="2"
-				EnableIntrinsicFunctions="true"
+				Optimization="1"
+				EnableIntrinsicFunctions="false"
+				FavorSizeOrSpeed="0"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;FOO_UIE_PLAYLISTS_DROPDOWN_EXPORTS"
-				RuntimeLibrary="2"
-				EnableFunctionLevelLinking="true"
+				RuntimeLibrary="0"
+				EnableFunctionLevelLinking="false"
+				FloatingPointModel="0"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
-				DebugInformationFormat="3"
+				DebugInformationFormat="0"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -135,12 +146,15 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="shlwapi.lib shared.lib comctl32.lib UxTheme.lib gdiplus.lib"
-				LinkIncremental="1"
-				AdditionalLibraryDirectories="..\..\shared"
-				GenerateDebugInformation="true"
-				SubSystem="2"
+				LinkIncremental="0"
+				AdditionalLibraryDirectories="../../shared"
+				GenerateDebugInformation="false"
+				SubSystem="0"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
+				OptimizeForWindows98="0"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -163,6 +177,8 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
+				Description="Copying component to foobar2000 components directory..."
+				CommandLine="Copy &quot;$(TargetPath)&quot; &quot;G:\vbox\foobar2000\components&quot; /D /Y"
 			/>
 		</Configuration>
 	</Configurations>
