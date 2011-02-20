@@ -1,0 +1,14 @@
+= foo_uie_playlists_dropdown
+
+A component for foobar2000 audio player.
+
+This component displays playlists in a dropdown list. Titles of the playlists are configurable and various informations about playlist are available (through formatting string).
+
+The component supports Drag&Drop, easy playlists reordering and sorting, context menu, custom icons and styles, and much more!
+
+== Columns UI SDK 6.3.1 + SDK 2010-10-02
+
+You need to make a few changes to Columns UI SDK 6.3.1 in order to successfully compile the plugin against SDK 2010-10-02.
+
+1. Replace all @infinite@ occurrences with @pfc_infinite@.
+2. In file @window.h@, replace @window_factory() : service_factory_base(window::class_guid)@ definition with @window_factory() : service_factory_base(window::class_guid, service_factory_traits<window>::factory_list())@.

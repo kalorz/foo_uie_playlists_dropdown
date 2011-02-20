@@ -316,6 +316,10 @@
 				RelativePath=".\titleformat_hooks.h"
 				>
 			</File>
+			<File
+				RelativePath=".\vsstyle_hack.h"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Resource Files"
@@ -345,6 +349,10 @@
 		</File>
 		<File
 			RelativePath=".\notes.txt"
+			>
+		</File>
+		<File
+			RelativePath="..\README"
 			>
 		</File>
 	</Files>

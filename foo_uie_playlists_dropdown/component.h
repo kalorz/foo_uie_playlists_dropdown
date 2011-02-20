@@ -35,7 +35,6 @@
 #endif
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-
 #ifndef WINVER
 #define WINVER 0x0501
 #endif
@@ -51,21 +50,24 @@
 #ifndef _WIN32_IE
 #define _WIN32_IE 0x0600
 #endif
-
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
+#pragma warning(push,1)
 #include "../../SDK/foobar2000.h"
 #include "../../helpers/helpers.h"
+#pragma warning(pop)
 
 #include <windowsx.h>
 #include <gdiplus.h>
 #include <oleidl.h>
-#include <uxtheme.h>
 #include <winuser.h>
-#include <vssym32.h>
 #include <commctrl.h>
+#include <uxtheme.h>
+#include <tmschema.h>
 
 #include "../../columns_ui-sdk/ui_extension.h"
+
+#include "vsstyle_hack.h" //TODO: THIS IS ONLY FOR COMPATIBILITY WITH <tmschema.h> INCLUDED BY helpers!
 
 #include "CGdiPlusBitmap.h"
 #include "config.h"
