@@ -12,6 +12,15 @@ Screenshot
 
 ![foo_uie_playlists_dropdown](https://github.com/sodercober/foo_uie_playlists_dropdown/raw/master/foo_uie_playlists_dropdown/screenshots/foo_uie_playlists_dropdown_0752.png)
 
+Development Environment
+-------------------------------------
+
+Solution/Project files are for MSVC9 ("Visual Studio 2008").
+
+Visual Studio 2008 *Express* users need to download and install [Windows Driver Kit](http://www.microsoft.com/whdc/DevTools/WDK/WDKpkg.mspx)
+(for ATL) and [WTL](http://wtl.sourceforge.net/), and add ATL/WTL `include` directories to Visual Studio
+Directories.
+
 Columns UI SDK 6.3.1 + SDK 2010-10-02
 -------------------------------------
 

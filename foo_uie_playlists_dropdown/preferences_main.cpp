@@ -1,5 +1,7 @@
 #include "component.h"
 
+#ifdef ___REMOVE_THIS___
+
 // Enable WindowsXP Theme Support
 HINSTANCE       playlists_dropdown::preferences::hUxtheme;
 DIALOGTHEMEPROC playlists_dropdown::preferences::ThemeDialogProc;
@@ -86,3 +88,5 @@ BOOL CALLBACK playlists_dropdown::preferences::MainDlgProc(HWND hWnd, UINT msg, 
 	}
 	return true;
 }
+
+#endif // ___REMOVE_THIS___

@@ -1,5 +1,7 @@
 #include "component.h"
 
+#ifdef ___REMOVE_THIS___
+
 playlists_dropdown::preferences::preferences() {
 }
 
@@ -55,3 +57,5 @@ void playlists_dropdown::preferences::apply_config() {
 	g_update_all_min_visible();
     g_redraw_all();
 }
+
+#endif // ___REMOVE_THIS___

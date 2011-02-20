@@ -5,6 +5,31 @@
 
 #pragma once
 
+class playlists_dropdown::preferences : public preferences_page_v3 {
+public:
+	preferences();
+	virtual ~preferences();
+
+	virtual preferences_page_instance::ptr instantiate(HWND parent, preferences_page_callback::ptr callback);
+	virtual const char * get_name();
+	virtual GUID get_guid();
+	virtual GUID get_parent_guid();
+	virtual bool get_help_url(pfc::string_base &p_out);
+};
+
+// ========================================================================================================================
+#endif
+// ========================================================================================================================
+
+#ifdef ___REMOVE_THIS___
+
+// ========================================================================================================================
+#ifndef _PREFERENCES_H_
+#define _PREFERENCES_H_
+// ========================================================================================================================
+
+#pragma once
+
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -37,7 +62,7 @@ struct tab_entry_t {
 //  Main preferences page class
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-class playlists_dropdown::preferences : public preferences_page {
+class playlists_dropdown::preferences : public preferences_page_v3 {
 public:
 	preferences();
 	virtual ~preferences();
@@ -90,3 +115,5 @@ private:
 // ========================================================================================================================
 #endif
 // ========================================================================================================================
+
+#endif // ___REMOVE_THIS___

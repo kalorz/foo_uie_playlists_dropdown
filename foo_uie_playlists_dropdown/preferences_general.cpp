@@ -1,5 +1,7 @@
 #include "component.h"
 
+#ifdef ___REMOVE_THIS___
+
 pfc::ptr_list_t<GUID>	playlists_dropdown::preferences::g_guids;
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -111,3 +113,5 @@ BOOL CALLBACK playlists_dropdown::preferences::GeneralDlgProc(HWND wnd, UINT msg
 	}
 	return FALSE;
 }
+
+#endif ___REMOVE_THIS___

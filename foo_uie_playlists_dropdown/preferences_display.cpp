@@ -1,5 +1,7 @@
 #include "component.h"
 
+#ifdef ___REMOVE_THIS___
+
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 //  Display preferences dialog procedure                                                                                   
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -186,3 +188,5 @@ BOOL CALLBACK playlists_dropdown::preferences::DisplayDlgProc(HWND wnd, UINT msg
 	}
 	return true;
 }
+
+#endif // ___REMOVE_THIS___
