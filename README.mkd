@@ -10,7 +10,7 @@ The component supports Drag&Drop, easy playlists reordering and sorting, context
 Screenshot
 ----------
 
-![foo_uie_playlists_dropdown](https://github.com/sodercober/foo_uie_playlists_dropdown/blob/master/foo_uie_playlists_dropdown/screenshots/foo_uie_playlists_dropdown_0752.png "foo_uie_playlists_dropdown")
+![foo_uie_playlists_dropdown](https://github.com/sodercober/foo_uie_playlists_dropdown/raw/master/foo_uie_playlists_dropdown/screenshots/foo_uie_playlists_dropdown_0752.png)
 
 Columns UI SDK 6.3.1 + SDK 2010-10-02
 -------------------------------------
@@ -19,6 +19,6 @@ You need to make a few changes to Columns UI SDK 6.3.1 in order to successfully 
 
 1. Replace all `infinite` occurrences with `pfc_infinite`.
 2. In file `window.h`, replace the definition:
-     window_factory() : service_factory_base(window::class_guid)
-   with:
-     window_factory() : service_factory_base(window::class_guid, service_factory_traits<window>::factory_list())
+       window_factory() : service_factory_base(window::class_guid)
+   with:  
+       window_factory() : service_factory_base(window::class_guid, service_factory_traits<window>::factory_list())
