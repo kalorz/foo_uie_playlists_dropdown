@@ -10,7 +10,7 @@ The component supports Drag&Drop, easy playlists reordering and sorting, context
 Screenshot
 ----------
 
-![foo_uie_playlists_dropdown](https://github.com/sodercober/foo_uie_playlists_dropdown/raw/master/foo_uie_playlists_dropdown/screenshots/foo_uie_playlists_dropdown_0752.png)
+![foo_uie_playlists_dropdown](https://github.com/karolsarnacki/foo_uie_playlists_dropdown/raw/master/foo_uie_playlists_dropdown/screenshots/foo_uie_playlists_dropdown_0752.png)
 
 Development Environment
 -------------------------------------
